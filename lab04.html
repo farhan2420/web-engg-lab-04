@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head><style>
+        h1 {text-align: center;}
+       
+        div {text-align: center;}
+
+        .dropbtn {
+  background-color: #155c03;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #92e228;
+}
+
+
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+ 
+  color: rgb(33, 7, 148);
+}
+
+a:hover {
+color: rgb(2, 37, 2);
+}
+
+a:active {
+  color: rgb(216, 17, 17);
+} 
+
+        </style>
+
+        <script>
+        function validateForm() {
+          var x = document.forms["myForm"]["fname"].value;
+          if (x == "" || x == null) {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+
+        function myFunction() {
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("text");
+  if (checkBox.checked == true){
+    window.alert('Student name is fahad, age is 22, from semester:6th and registered in total number of Courses: 06');
+
+  } else {
+     text.style.display = "none";
+  }
+} 
+
+//Move forward in browser history from the current position
+function moveForward(){
+window.history.forward();
+window.open('https://www.google.com');
+}
+//Move backward in browser history from the current position
+function moveBackward(){
+  window.open('Studentprofpage.html');
+}
+
+        </script>
+        </head>
+
+<body style="background-color:rgb(62, 120, 247);">
+    
+<h1 style="color:rgba(7, 1, 17, 0.904);">Student Registration Page</h1>
+
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post" required>
+    Name: <input type="text" name="fname"><br></br>
+
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="psswrd">Enter Passward:</label>
+  <input type="number" id="psswrd" name="psswrd"><br><br>
+  <label for="email">Email</label>
+  <input type="email" id="email"><br></br>
+  <button type="submit">Submit</button><br></br>
+  
+  <label for="myCheck"><b>Show available Cookie:</b></label> 
+  <input type="checkbox" id="myCheck" onclick="myFunction()">
+   <p id="text" style="display:none">cookie box is checked</p>
+
+
+
+
+</form>
+
+<h3>This Dropdown List Shows Mostly Visited URLs Links in History below:</h3>
+
+<div class="dropdown">
+  <button class="dropbtn">Check Windows History</button>
+  <div class="dropdown-content">
+  <a href="lab03.html" target="_blank" >lab03</a>
+  <a href="lab02.html" target="_blank" >lab04</a>
+  <a href ="www.google.com" target="_blank" >google</a>
+  </div>
+</div>
+<div>
+  <h1 style="color:orangered">Previous Page or Next Page?</h1>
+
+  <input type="button" value="Forward" onclick="moveForward()" />
+  <input type="button" value="Backward" onclick="moveBackward()" />
+  </div>
+  
+
+
+
+</body>
+</html>

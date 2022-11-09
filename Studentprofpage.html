@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab#4 – BOM</title>
+</head>
+
+<style>
+   h1 {text-align: center;}
+       
+      
+  .submit {
+    background-color: #0a0ece;
+    border: none;
+    color: rgb(232, 240, 243);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .other {
+    background-color: #f72e2e;
+    border: none;
+    color: rgb(232, 240, 243);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+
+
+  </style>
+
+<body  onload="checkCookie()" style="background-color:rgba(35, 236, 210, 0.377);">
+ 
+  <a href="Studentprofpage.html"><img src="picturee.jpg" alt="Login image" style="width:3px;height:14px;"></a>
+
+<div>
+<h1 style="color:rgb(8, 139, 8)"> Welcome to Login Page</h1>
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post" required>
+   <b>Name:<input type="text" name="fname"></b><br></br>
+
+<label for="lname"><b>Last name:</b></label>
+<input type="text" id="lname" name="lname"><br><br>
+<label for="psswrd"><b> Passward:</b></label>
+<input type="number" id="psswrd" name="psswrd"><br><br>
+
+<button class="button submit">Submit</button><br></br>
+
+
+</div>
+</form>
+<button class="button other" onclick="setTimeout(myFunction, 3000);">Okay</button>
+
+
+
+<div>
+<script>
+
+function myFunction() {
+  window.alert('Please wait, connecting to Students Registration Page..');
+
+  window.open('lab04.html');
+  //window.alert('New window has been opened');
+
+}
+
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+
+
+
+function validateForm() {
+          var x = document.forms["myForm"]["fname"].value;
+          if (x == "" || x == null) {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+
+    //Open a new window and point it to google.com
+    //function openWindow(){
+    //Ask from the user to enter delay before opening the window 
+    //using window.prompt 
+    //const delay = window.prompt("Enter the delay time to open a window");
+    //Wait 2 seconds (2000 milliseconds) using 'window.setTimeout' 
+   // before opening the window
+
+   
+    //window.setTimeout(function(){
+
+    //}, parseInt(delay) * 2);
+    //}
+    
+</script>
+</body>
+</html>
+   
